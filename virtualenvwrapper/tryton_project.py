@@ -52,6 +52,18 @@ def template_develop(args):
     return
 
 
+def template_invoke(args):
+    """
+    Install based on an invoke template
+    """
+    subprocess.check_call([
+            'hg', 'clone', 'ssh://hg@bitbucket.org/nantic/tryton-utils',
+            'tasks'
+    ])
+    subprocess.check_call(['invoke', 'bs'])
+    return
+
+
 def template(args, version):
     """
     * Installs Tryton
