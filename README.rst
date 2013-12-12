@@ -68,7 +68,7 @@ contain and `bs` tasks. This is used to populate the virtualenv with all the
 needed sources.
 
 And example of a invoke repo can be found at:
-`<https://bitbucket.org/nantic/tryton_tasks/>`_
+`<https://bitbucket.org/nantic/tryton-utils/>`_
 
 For more info about invoke please refer to their oficial documentation hosted
 on `<http://docs.pyinvoke.org/en/latest/>`_
