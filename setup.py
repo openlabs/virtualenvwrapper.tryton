@@ -31,6 +31,9 @@ setup(
 
     provides=['virtualenvwrapper.tryton'],
     requires=[
+        'invoke',
+        'blessing',
+        'hgapi',
         'virtualenv',
         'virtualenvwrapper (>=4.0)',
     ],
@@ -41,6 +44,7 @@ setup(
     entry_points={
         'virtualenvwrapper.project.template': [
             'tryton = virtualenvwrapper.tryton_project:template_develop',
+            'tryton_invoke = virtualenvwrapper.tryton_project:template_invoke',
             'tryton30 = virtualenvwrapper.tryton_project:template30',
             'tryton28 = virtualenvwrapper.tryton_project:template28',
             'tryton26 = virtualenvwrapper.tryton_project:template26',

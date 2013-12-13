@@ -52,6 +52,27 @@ def template_develop(args):
     return
 
 
+def template_invoke(args):
+    """
+    Install based on an invoke template
+    """
+    invoke_repo = os.getenv('INVOKE_REPO', None)
+    if len(args) > 1:
+        invoke_repo = args[1]
+
+    if not invoke_repo:
+        log.error('Invoke repo not found. Use INVOKE_REPO envirorment '
+            'variable or pass it as additional parameter')
+        return
+
+    subprocess.check_call([
+            'hg', 'clone', invoke_repo, 'tasks'
+    ])
+    subprocess.check_call(['touch', 'local.cfg'])
+    subprocess.check_call(['invoke', 'bs'])
+    return
+
+
 def template(args, version):
     """
     * Installs Tryton

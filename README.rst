@@ -50,3 +50,25 @@ The templates included are:
 * tryton14 - Tryton 1.4
 * tryton12 - Tryton 1.2
 * tryton10 - Tryton 1.0
+
+Invoke Template
+---------------
+
+There is an expecial template `tryton_invoke` that clones and invoke repo and
+executes a task called bs (bootstrap) to build all the envirorment.
+
+To use this template you must define the `INVOKE_REPO` envirorment variable or
+pass the invoke repo route as additional parameter. The following call::
+
+  mkproject -t tryton_invoke tryton_project <invoke_repo>
+
+
+Will clone the mercurial repository hosted in `<invoke_repo>` which must
+contain and `bs` tasks. This is used to populate the virtualenv with all the
+needed sources.
+
+And example of a invoke repo can be found at:
+`<https://bitbucket.org/nantic/tryton-utils/>`_
+
+For more info about invoke please refer to their oficial documentation hosted
+on `<http://docs.pyinvoke.org/en/latest/>`_
