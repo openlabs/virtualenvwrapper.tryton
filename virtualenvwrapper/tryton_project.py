@@ -61,12 +61,14 @@ def template_invoke(args):
         invoke_repo = args[1]
 
     if not invoke_repo:
-        log.error('Invoke repo not found. Use INVOKE_REPO envirorment '
-            'variable or pass it as additional parameter')
+        log.error(
+            'Invoke repo not found. Use INVOKE_REPO envirorment '
+            'variable or pass it as additional parameter'
+        )
         return
 
     subprocess.check_call([
-            'hg', 'clone', invoke_repo, 'tasks'
+        'hg', 'clone', invoke_repo, 'tasks'
     ])
     subprocess.check_call(['touch', 'local.cfg'])
     subprocess.check_call(['invoke', 'bs'])
