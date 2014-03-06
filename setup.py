@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name='virtualenvwrapper.tryton',
-    version='0.2',
+    version='0.3',
 
     description="Tryton virtualenvwrapper plugin",
     long_description=open('README.rst').read(),
